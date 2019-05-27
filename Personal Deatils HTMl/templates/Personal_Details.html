@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<style>
+body {background-color: LightGray;}
+h2   {color: blue;}
+P    {color: red;}
+
+
+</style>
+
+
+<h2>Redeem System HRMS form</h2>
+
+
+<form action="/insert" method = "post">
+
+  <b>Employee ID</b>:<br>
+  <input type="text" name="EID" >
+  <br><br>
+ 
+  <b>Employee Gender</b>:<br>
+  <input type="radio" name="gender" value="male" checked> Male<br>
+  <input type="radio" name="gender" value="female"> Female<br>
+  <input type="radio" name="gender" value="Other"> Other<br><br>
+
+
+
+  <b>Employee Blood Group</b>:<br>
+  <select name="bldgrp">
+            <option value="A+ve">A +ve</option>
+            <option value="A-ve">A -ve</option>
+            <option value="B+ve">B +ve</option>
+            <option value="B-ve">B -ve</option>
+            <option value="O+ve">O +ve</option>
+            <option value="O-ve">O -ve</option>
+            <option value="AB+ve">AB +ve</option>
+            <option value="AB-ve">AB -ve</option>
+          </select>
+  <br><br>
+  
+  <b>Employee Adress</b>:<br>
+  <input type="text" name="Addr_Line_1" placeholder="Adress line 1 "  required>
+  <input type="text" name="Addr_Line_2" placeholder="Adress line 2" >
+  <input type="text" name="City" placeholder="Enter city name" required><br><br>
+  <input type="text" name="State" placeholder="Enter the stste" required >
+  <input type="number" name="PIN" placeholder="Enter pin code" required >
+  <br><br>
+  
+  
+  <br>
+  <input type="submit" value="Submit" >
+</form> 
+
+<p>Click Submit to upload</p>
+
+</body>
+</html>
