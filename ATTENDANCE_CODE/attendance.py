@@ -14,7 +14,7 @@ def getvalue():
     ef = request.form['Punch_In']
     gh = request.form['Punch_Out']
     inset.insert(ab, cd, ef, gh)
-    return render_template('pas.html', na=ab, nb=cd, nc=ef, nd=gh)
+    return render_template('atten.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
