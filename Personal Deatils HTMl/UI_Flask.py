@@ -22,7 +22,7 @@ def insert():
         City = request.form['City']
         State = request.form['State']
         PIN = request.form['PIN']
-        x = INSERT_Values_DB.dup_check(eid)
+        x = INSERT_Values_DB.dup_check(eid)  #calling duplicate values cheacking function.
         print(x)
         if(x!=None):
             flash("Eployee ID Alerady exist", "error")
