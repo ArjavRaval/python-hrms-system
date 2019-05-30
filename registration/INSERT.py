@@ -8,15 +8,7 @@ def insert_entry(eid,efname,elname,pemail,oemail,edoj,edes,ephone,edep,repman):
       passwd="",
       database="hrms" #change the db here
     )
-    '''
-    ID=int(input("enter a number"))
-    name=input("enter a name")
-    email=input("enter a email id")
-    doj=input("enter a date in reverse order")
-    desgn=input("provide a suitable designation")
-    ph_no=input("enter a phone number")
-    dept=input("enter dept")
-    '''
+  
     mycursor = mydb.cursor()
 	
 	#doubly make sure that the query is correct and in correct order
