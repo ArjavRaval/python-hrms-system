@@ -32,9 +32,6 @@ P    {color: rgb(156, 38, 38);}
 
 </style>
 
-
-
-
 <center>
 <h2>Redeem System HRMS form</h2>
 
@@ -42,7 +39,7 @@ P    {color: rgb(156, 38, 38);}
 <form action="/insert" method = "post">
   
   <b>Employee ID</b>:<br><br>
-  <input type="text" name="EID" >
+  <input type="text" name="EID" required >
   <br><br>
 
   <b>Employee Gender</b>:<br><br>
@@ -82,6 +79,7 @@ P    {color: rgb(156, 38, 38);}
 </form> 
 
 <p>Click Submit to upload</p>
+{% include "include/_message.html "%}
 </center>
 </body>
 </html>
