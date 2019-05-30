@@ -15,7 +15,7 @@ def insertValues(eid, gender, BloodGrp, Addr_Line_1, Addr_Line_2, City, State, P
     mycursor.execute(sql, val)
     mydb.commit()
     mydb.close()
-
+#using Below function  we are checking  duplicatete employee Id if duplicate entry is present then returning list of tuples values.
 def dup_check(eid):
     mydb = mysql.connector.connect(
             host="localhost",
@@ -29,5 +29,3 @@ def dup_check(eid):
     x = mycursor.fetchone()
     mydb.close()
     return x
-
-   # print(mycursor.rowcount, "record inserted.")
