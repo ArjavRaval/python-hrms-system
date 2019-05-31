@@ -19,6 +19,11 @@
         <head>
                 <link rel="stylesheet" href="/static/style.css" type="text/css">
         </head>
+        <ul class="menu">
+                <a href="{{ url_for('dropsession1') }}">  Registration</a>
+                <a href="{{ url_for('dropsession2') }}">  Personal Details</a>
+                <a href="{{ url_for('dropsession') }}">  Logout</a>
+            </ul>
     <center>
                 <div class="header">
                                 <img src="https://media.licdn.com/dms/image/C511BAQEO65PDkla4iA/company-background_10000/0?e=2159024400&v=beta&t=5cUkEKTgGK497OLTPF4bBie1E5wCKQeHN8vIf62wcl0" alt="logo" />
@@ -29,10 +34,6 @@
 <body>
 <h1 style="color:#2519ca;">Welcome to the HRMS Home page!</h1>
 </body>
-<ul class="menu">
-    <a href="{{ url_for('dropsession1') }}">Registration</a><br>
-    <a href="{{ url_for('dropsession2') }}">Personal Details</a><br>
-    <a href="{{ url_for('dropsession') }}">Logout</a>
-</ul>
+
 </center>
 </html>

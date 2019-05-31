@@ -33,6 +33,12 @@ P    {color: rgb(156, 38, 38);}
 </style>
 
 <center>
+    <ul class="menu">
+        <br><a href="{{ url_for('dropsession3') }}">Home page</a>
+        <a href="{{ url_for('dropsession1') }}">Registration</a>
+        <a href="{{ url_for('dropsession2') }}">Personal Details</a>
+        <a href="{{ url_for('dropsession') }}">Logout</a>
+    </ul>
 <h2>Redeem System HRMS form</h2>
 
 
@@ -79,12 +85,7 @@ P    {color: rgb(156, 38, 38);}
 </form> 
 
 <p>Click Submit to upload</p>
-<ul class="menu">
-    <br><a href="{{ url_for('dropsession3') }}">Home page</a><br>
-    <a href="{{ url_for('dropsession1') }}">Registration</a><br>
-    <a href="{{ url_for('dropsession2') }}">Personal Details</a><br>
-    <a href="{{ url_for('dropsession') }}">Logout</a>
-</ul>
+
 {% include "include/_message.html "%}
 </center>
 </body>

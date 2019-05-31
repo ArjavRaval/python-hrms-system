@@ -4,6 +4,12 @@
       <link rel="stylesheet" href="/static/style.css" type="text/css">
   </head>
 <body style="background-color:powderblue;">
+  <ul class="menu">
+    <br><a href="{{ url_for('dropsession3') }}">Home page</a>
+    <a href="{{ url_for('dropsession1') }}">Registration</a>
+    <a href="{{ url_for('dropsession2') }}">Personal Details</a>
+    <a href="{{ url_for('dropsession') }}">Logout</a>
+</ul>
 
 <center>
 <h2 style="color:#e67050;">Registration Page</h2>
@@ -64,12 +70,7 @@
 </form> 
 {% include "include/_message.html "%}
 <p>Click Submit to upload</p>
-<ul class="menu">
-    <br><a href="{{ url_for('dropsession3') }}">Home page</a><br>
-    <a href="{{ url_for('dropsession1') }}">Registration</a><br>
-    <a href="{{ url_for('dropsession2') }}">Personal Details</a><br>
-    <a href="{{ url_for('dropsession') }}">Logout</a>
-</ul>
+
 </body>
 </center>
 </html>
