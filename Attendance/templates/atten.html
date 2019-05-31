@@ -1,0 +1,35 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="/static/style.css" type="text/css">
+<title>Untitled Document</title>
+</head>
+<body>
+	
+<h2>Attendence</h2>
+
+<form action="/getvalue1" method = "POST">
+  Employee_ID:<br>
+  <input type="text" name="e_id">
+  <br>
+  Date:<br>
+  <input type="date" name="Date">
+  <br>
+  Punch_In:<br>
+  <input type="time" name="Punch_In">
+  <br>
+  Punch_Out:<br>
+  <input type="time" name="Punch_Out">
+  <br>
+ 
+
+  <br>
+  <input type="submit" value="Submit">
+</form> 
+
+<p>If you click the "Submit" button, the form-data will be sent to a page called "/action_page.php".</p>
+
+</body>
+</html>
