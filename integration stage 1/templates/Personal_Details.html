@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+      </head>
+<body>
+
+<style>
+body {background-color: dodgerblue;}
+h2   {color: rgb(90, 70, 70);}
+P    {color: rgb(156, 38, 38);}
+</style>
+<style type="text/css">
+#submit {
+ background-color: rgb(240, 199, 199);
+ padding: .5em;
+ -moz-border-radius: 5px;
+ -webkit-border-radius: 5px;
+ border-radius: 6px;
+ color: rgb(124, 96, 96);
+ font-family: 'Oswald';
+ font-size: 20px;
+ text-decoration: none;
+ border: none;
+}
+
+#submit:hover {
+ border: none;
+ background: orange;
+ box-shadow: 0px 0px 1px #777;
+}
+
+</style>
+
+<center>
+<h2>Redeem System HRMS form</h2>
+
+
+<form action="/insert" method = "post">
+  
+  <b>Employee ID</b>:<br><br>
+  <input type="text" name="EID" required >
+  <br><br>
+
+  <b>Employee Gender</b>:<br><br>
+  <select name="gender">
+
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+            <br><br>
+  <b>Employee Blood Group</b>:<br><br>
+  <select name="bldgrp">
+
+            <option value="A+ve">A +ve</option>
+            <option value="A-ve">A -ve</option>
+            <option value="B+ve">B +ve</option>
+            <option value="B-ve">B -ve</option>
+            <option value="O+ve">O +ve</option>
+            <option value="O-ve">O -ve</option>
+            <option value="AB+ve">AB +ve</option>
+            <option value="AB-ve">AB -ve</option>
+          </select>
+  <br><br>
+  
+  <b>Employee Adress</b>:<br><br>
+  <input type="text" name="Addr_Line_1" placeholder="Adress line 1 "  required>
+  <input type="text" name="Addr_Line_2" placeholder="Adress line 2" >
+  <input type="text" name="City" placeholder="Enter city name" required><br><br>
+  <input type="text" name="State" placeholder="Enter the state" required >
+  <input type="number" name="PIN" placeholder="Enter pin code" required >
+  <br><br>
+  
+  
+  <br>
+  
+  <button id="submit">Submit</button>
+</form> 
+
+<p>Click Submit to upload</p>
+<ul class="menu">
+    <br><a href="{{ url_for('dropsession3') }}">Home page</a><br>
+    <a href="{{ url_for('dropsession1') }}">Registration</a><br>
+    <a href="{{ url_for('dropsession2') }}">Personal Details</a><br>
+    <a href="{{ url_for('dropsession') }}">Logout</a>
+</ul>
+{% include "include/_message.html "%}
+</center>
+</body>
+</html>
