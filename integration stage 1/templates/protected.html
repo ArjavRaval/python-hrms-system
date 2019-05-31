@@ -3,7 +3,7 @@
                 .header img {
                        
                         float: left;
-                        width: 1800px;
+                        width: 95%;
                         height: 200px;
                         background: #555;
                       }
@@ -19,11 +19,50 @@
         <head>
                 <link rel="stylesheet" href="/static/style.css" type="text/css">
         </head>
-        <ul class="menu">
-                <a href="{{ url_for('dropsession1') }}">  Registration</a>
-                <a href="{{ url_for('dropsession2') }}">  Personal Details</a>
-                <a href="{{ url_for('dropsession') }}">  Logout</a>
-            </ul>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  width: 90.1%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+                <ul class="menu">
+                                <a href="{{ url_for('dropsession1') }}">  Registration</a>
+                                <a href="{{ url_for('dropsession2') }}">  Personal Details</a>
+                                <a href="{{ url_for('dropsession') }}">  Logout</a>
+                            </ul>
+</div>
+
     <center>
                 <div class="header">
                                 <img src="https://media.licdn.com/dms/image/C511BAQEO65PDkla4iA/company-background_10000/0?e=2159024400&v=beta&t=5cUkEKTgGK497OLTPF4bBie1E5wCKQeHN8vIf62wcl0" alt="logo" />
