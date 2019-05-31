@@ -3,6 +3,7 @@ from flask import Flask, flash, redirect, render_template, request, session, abo
 import os
 import INSERT
 import INSERT_Values_DB
+import In_Out_calculation
 
 """ Get and Post using SQL Querries """
 import mysql.connector
@@ -62,6 +63,10 @@ def dropsession2():
 def dropsession3():
     session.clear()
     return render_template('protected.html')
+@app.route('/Attend')
+def dropsession4():
+    session.clear()
+    return render_template('atten.html')
 
 
 @app.route('/insertReg', methods=['POST'])
@@ -86,7 +91,7 @@ def insertReg():
         else:
             INSERT.insert_entry(eid, efname, elname, pemail, oemail, edoj, edes, ephone, edep, repman)
             flash("Data store Successefully ", "error")
-            return render_template('protected.html')
+            return render_template('old_registration.html')
 
     else:
         return "Nothing"
@@ -113,13 +118,46 @@ def insert():
         else:
             INSERT_Values_DB.insertValues(eid, gender, BloodGrp, Addr_Line_1, Addr_Line_2, City, State, PIN)
             flash("Data store Successefully ", "error")
-            return render_template('protected.html')
+            return render_template('Personal_Details.html')
         ######
-        return render_template('protected.html')
+        #return render_template('protected.html')
     else:
         return "Nothing"
 
 
+@app.route('/hi', methods=["POST"])
+def getvalue():
+    ab = request.form['e_id']
+    cd = request.form['Date']
+    ef = request.form['Punch_In']
+    gh = request.form['Punch_Out']
+
+    sql = "INSERT INTO `attendance`(`e_id`, `Date`, `Punch_In`, `Punch_Out`) VALUES (%s, %s, %s, %s)"
+    val = (ab, cd, ef, gh)
+    sql1 = "SELECT `e_id` FROM `attendance` WHERE `e_id` =" + str(ab)
+    mycursor.execute(sql1)
+    x = mycursor.fetchall()
+    if(len(x) == 0):
+        mycursor.execute(sql, val)
+        # insert(ab, cd, ef, gh)
+        mydb.commit()
+
+        sql = "SELECT `e_id` FROM `attendance` WHERE `e_id` = " + str(ab)
+        mycursor.execute(sql)
+        e_id_from_db = mycursor.fetchone()
+        # mydb.commit()
+
+        if (request.form['e_id'] == str(e_id_from_db[0])):
+            flash("Successfully updated")
+            mycursor.execute("UPDATE `attendance` SET `Punch_hours`=(`Punch_Out` - `Punch_In`) WHERE (`Date` = CURDATE() )")
+            mydb.commit()
+            # return render_template('atten.html')
+        else:
+            flash("Failed to update")
+    else:
+        flash("Eployee ID Alerady exist", "error")
+    return render_template('atten.html')
+#In_Out_calculation.wrk_hrs_calc()
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
     app.run()
