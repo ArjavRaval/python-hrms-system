@@ -19,7 +19,7 @@ mydb.commit()
 app = Flask(__name__)
 app.secret_key = "Happy!!!"
 
-E_id = 1000160
+E_id = 1000133
 
 #def employee_id(id):
 #    E_id = id
@@ -189,8 +189,11 @@ def getvalue():
 @app.route('/get_per_details', methods=['GET','POST'])
 def Get_per_details():
  
-  #sql_per="SELECT * FROM `per_details` WHERE `e_id` = 1000160"
   E_id = do_admin_login.e_ID
+  sql_org = "SELECT * FROM `org_details` WHERE `e_id` = "+ str(E_id)
+  print(E_id)
+  #sql_per="SELECT * FROM `per_details` WHERE `e_id` = 1000160"
+   
   sql_per = "SELECT * FROM `per_details` WHERE `e_id` = "+ str(E_id)
   print(E_id)
   #mycursor.execute(sql_per, (ID, '1000133'))
