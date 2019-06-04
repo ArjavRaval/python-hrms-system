@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <link rel="stylesheet" href="/static/style.css" type="text/css">
+  </head>
+<body style="background-color:powderblue;">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body {margin:0;}
+    
+    .navbar {
+      overflow: hidden;
+      background-color: #333;
+      position: fixed;
+      top: 0;
+      width: 95%;
+    }
+    
+    .navbar a {
+      float: left;
+      display: block;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+    
+    .navbar a:hover {
+      background: #ddd;
+      color: black;
+    }
+    
+    .main {
+      padding: 16px;
+      margin-top: 25px;
+      height: 1500px; /* Used in this example to enable scrolling */
+    }
+    </style>
+    </head>
+    <body>
+    
+    <div class="navbar">
+        <ul class="menu">
+            <br><a href="{{ url_for('dropsession3') }}">Home page</a>
+            <a href="{{ url_for('dropsession2') }}">Personal Details</a>
+            <a href="{{ url_for('dropsession4') }}"> Attendance</a>
+            <a href="{{ url_for('dropsession') }}">Logout</a>
+        </ul>
+    </div>
+  
+
+<center>
+  <br><br>
+<h2 style="color:#e67050;">Registration Page</h2>
+
+
+<form action="/insertReg" method = "post">
+
+  <b class="ex1" >Employee ID</b>:
+  <input type="text" name="e_id" required>
+  <br><br>
+ 
+   <b class="ex1">Employee DOJ</b>:
+  <input type="date" name="e_doj" required>
+  <br><br>
+  
+    <b class="ex1">Department</b>:
+  <select name= "e_dep" required>
+  <option value="IIOT">IIOT</option>
+  <option value="Analytics">Analytics</option>
+  <option value="Networking">Networking</option>
+  <option value="Mechanical">Mechanical</option>
+  </select>
+  
+  <br><br><b class="ex1">Designation</b>:
+  <select name= "e_des" required>
+  <option value="Trainee Engg">Trainee Engg</option>
+  <option value="Junior Engg">Junior Engg</option>
+  <option value="Senioir Engg">Senioir Engg</option>
+  <option value="Other">Other</option>
+   </select>
+   
+  <br><br><b class="ex1">Employee Firstname</b>:
+  <input type="text" name="e_fname" required>
+  <br><br>
+  
+  <b class="ex1">Employee Lastname</b>:
+  <input type="text" name="e_lname" required>
+  <br><br>
+  
+  <b class="ex1">Email ID(Organisational)</b>:
+  <input type="email" name="e_oemail" required>
+  <br><br>
+  
+  <b class="ex1">Reporting Manager</b>:
+  <input type="text" name="e_repman" required>
+  <br><br>
+  
+  <b class="ex1">Employee Phone Number</b>:
+  <input type="text" name="e_ph" required>
+  <br><br>
+  
+   <b class="ex1">Email ID(Personal)</b>:
+  <input type="email" name="e_pemail" required>
+  <br><br>
+  
+  <br>
+  <input type="submit" value="Submit">
+</form> 
+{% include "include/_message.html "%}
+<p>Click Submit to upload</p>
+
+</body>
+</center>
+</html>
+

@@ -1,0 +1,32 @@
+ <table>
+	<thead>
+		<tr>
+			<th>Employee ID</th>
+			<th>RFID_number</th>
+			<th>Date</th>
+			<th>InTime</th>
+			<th>OutTime</th>
+			<th>Work_hours</th>
+			<th>Punch In</th>
+			<th>Punch_out</th>
+			<th>Punch_hours</th>
+			<th>locale</th>
+		<tr>
+	</thead>
+	<tbody>
+		{%for row in value %}
+			<tr>
+				<td>{{row[0]}}</td>
+				<td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+				<td>{{row[4]}}</td>
+				<td>{{row[5]}}</td>
+				<td>{{row[6]}}</td>
+				<td>{{row[7]}}</td>
+				<td>{{row[8]}}</td>
+				<td>{{row[9]}}</td>
+			</tr>
+			{% endfor %}
+    </tbody>
+</table>

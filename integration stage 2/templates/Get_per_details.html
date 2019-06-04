@@ -1,0 +1,28 @@
+ <table>
+	<thead>
+		<tr>
+			<th>Employee ID</th>
+			<th>Gender</th>
+			<th>Blood Group</th>
+			<th>Addr_Line_1</th>
+			<th>Addr_Line_2</th>
+			<th>State</th>
+			<th>City</th>
+			<th>PIN</th>
+		<tr>
+	</thead>
+	<tbody>
+		{%for row in value %}
+			<tr>
+				<td>{{row[0]}}</td>
+				<td>{{row[1]}}</td>
+				<td>{{row[2]}}</td>
+				<td>{{row[3]}}</td>
+				<td>{{row[4]}}</td>
+				<td>{{row[5]}}</td>
+				<td>{{row[6]}}</td>
+				<td>{{row[7]}}</td>
+			</tr>
+			{% endfor %}
+    </tbody>
+</table>
