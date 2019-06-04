@@ -1,0 +1,100 @@
+
+<html>
+    <!-- <head>
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+    </head>  -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+       .tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+/* Style the tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+        body {font-family: "Lato", sans-serif;}
+
+      .sidebar {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 16px;
+      }
+
+      .sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: #818181;
+        display: block;
+      }
+
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+
+      .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        padding: 0px 10px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidebar {padding-top: 15px;}
+        .sidebar a {font-size: 18px;}
+      }
+        </style>
+        </head>
+<body>
+
+    <div>
+        <img src="https://media.licdn.com/dms/image/C511BAQEO65PDkla4iA/company-background_10000/0?e=2159024400&v=beta&t=5cUkEKTgGK497OLTPF4bBie1E5wCKQeHN8vIf62wcl0" alt="Lights" style="width:1910";>
+        <!-- <h1>London</h1> -->
+        <!-- <p>London is the capital city of England.</p> -->
+      </div>
+      <div class="sidebar">
+          <button class="tablinks" onclick="openCity()" id="reg">London</button>
+        <a href="{{ url_for('dropsession1') }}">  Registration</a>
+        <a href="{{ url_for('dropsession2') }}">  Personal Details</a>
+        <a href="{{ url_for('dropsession4') }}"> Attendance</a>
+        <a href="{{ url_for('dropsession5') }}"> Get organization Data</a>
+        <a href="{{ url_for('dropsession6') }}"> Get Personal  Data</a>
+        <a href="{{ url_for('dropsession7') }}"> Get Attendance  Data</a>
+        <a href="{{ url_for('dropsession') }}">  Logout</a>
+    </ul>
+      </div>
+    <center>
+                  <div class="header">
+                              <h1 style="color:#993519;">Redeem Systems Pvt Ltd</h1>
+                              </div>
+    <title>Protected Page</title>
+</head>
+<body>
+<h1 style="color:#2519ca;">Welcome to the HRMS Home page!</h1>
+</body>
+
+</center>
+</body>
+<script>
+function openCity() {
+
+  }
+
+</script>
+</html>

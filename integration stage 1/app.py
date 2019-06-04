@@ -47,6 +47,7 @@ def do_admin_login():
         return render_template('login.html')
 
 
+
 @app.route('/logout')
 def dropsession():
     session.clear()
@@ -67,6 +68,19 @@ def dropsession3():
 def dropsession4():
     session.clear()
     return render_template('atten.html')
+@app.route('/org_get')
+def dropsession5():
+    session.clear()
+    return org_det_get()
+@app.route('/per_get')
+def dropsession6():
+    session.clear()
+    return per_det_get()
+@app.route('/attend_get')
+def dropsession7():
+    session.clear()
+    return att_det_get()
+
 
 
 @app.route('/insertReg', methods=['POST'])
@@ -110,7 +124,7 @@ def insert():
         State = request.form['State']
         PIN = request.form['PIN']
         x = INSERT_Values_DB.dup_check(eid)
-        print(x)
+        #print(x)
         if(x!=None):
             flash("Eployee ID Alerady exist", "error")
             return render_template('Personal_Details.html')
@@ -157,7 +171,42 @@ def getvalue():
     else:
         flash("Eployee ID Alerady exist", "error")
     return render_template('atten.html')
-#In_Out_calculation.wrk_hrs_calc()
+In_Out_calculation.wrk_hrs_calc()
+
+#org detial retrive
+@app.route('/org_get', methods=["GET"])
+def org_det_get():
+    #sqll = "SELECT `e_id`, `First_Name`, `Last_Name`, `per_email`, `ph_num`  FROM `org_details` WHERE 'e_id' ="  + str(e_ID)
+    sqll = "SELECT `e_id`, `First_Name`, `Last_Name`, `per_email`, `org_email`, `DOJ`, `desig_id`, `ph_num`, `depart_id`, `report_man` FROM `org_details` WHERE 1"
+   # sqll = "SELECT `admin_login_creds`.`e_ID`, `org_details`.`e_id`, `First_Name`, `Last_Name`, `per_email`, `ph_num` FROM `admin_login_creds`, `org_details` WHERE((`admin_login_creds`.`e_ID`) AND(`org_details`.`e_id`))"
+    mycursor.execute(sqll)
+    x = mycursor.fetchall()
+    print(x)
+    return render_template("example.html", value=x)
+
+#Per detial retrive
+@app.route('/per_get', methods=["GET"])
+def per_det_get():
+    #sqll = "SELECT `e_id`, `First_Name`, `Last_Name`, `per_email`, `ph_num`  FROM `org_details` WHERE 'e_id' ="  + str(e_ID)
+    sqll = "SELECT `e_id`, `Gender`, `Blood_Grp`, `Addr_Line_1`, `Addr_Line_2`, `State`, `City`, `PIN` FROM `per_details` WHERE 1"
+   # sqll = "SELECT `admin_login_creds`.`e_ID`, `org_details`.`e_id`, `First_Name`, `Last_Name`, `per_email`, `ph_num` FROM `admin_login_creds`, `org_details` WHERE((`admin_login_creds`.`e_ID`) AND(`org_details`.`e_id`))"
+    mycursor.execute(sqll)
+    x = mycursor.fetchall()
+    print(x)
+    return render_template("Per_det_get.html", value=x)
+
+@app.route('/attend_get', methods=["GET"])
+def att_det_get():
+    #sqll = "SELECT `e_id`, `First_Name`, `Last_Name`, `per_email`, `ph_num`  FROM `org_details` WHERE 'e_id' ="  + str(e_ID)
+    sqll = "SELECT `e_id`, `RFID_num`, `Date`, `In_Time`, `Out_Time`, `Work_hours`, `Punch_In`, `Punch_Out`, `Punch_hours` FROM `attendance` WHERE 1"
+   # sqll = "SELECT `admin_login_creds`.`e_ID`, `org_details`.`e_id`, `First_Name`, `Last_Name`, `per_email`, `ph_num` FROM `admin_login_creds`, `org_details` WHERE((`admin_login_creds`.`e_ID`) AND(`org_details`.`e_id`))"
+    mycursor.execute(sqll)
+    x = mycursor.fetchall()
+    print(x)
+    return render_template("Attendance_get.html", value=x)
+
+
+
 if __name__ == "__main__":
     app.secret_key = os.urandom(12)
     app.run()

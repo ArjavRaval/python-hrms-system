@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Menu</title>
+        <style type="text/css">
+            * {
+            margin:0;
+            padding:0;
+            }
+            body {
+            font-family: Open Sans, Arial, sans-serif;
+            overflow-x: hidden;
+            }
+            nav {
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            bottom: 0;
+            width: 200px;
+            background-color: #036;
+            transform: translate3d(-200px, 0, 0);
+            transition: transform 0.4s ease;
+            }
+            .active-new nav {
+            transform: translate3d(0, 0, 0);
+            }
+
+            nav ul {
+            list-style: none;
+            margin-top: 100px:
+            }
+            nav ul li a {
+            text-decoration: none;
+            display: block;
+            text-align: center;
+            coclor: #fff;
+            padding: 10px 0;
+            }
+            .nav-toggle-btn {
+            display: block;
+            position: absolute;
+            left: 200px;
+            width: 40px;
+             height: 40px;
+             background-color: #666;
+
+            }
+            .content {
+            padding-top: 300px;
+            height:2000px;
+            background-color: #ccf;
+            text-align: center;
+            trsnsition: transform 04s ease;
+            }
+            .active-nav .content {
+            transform: translate3d(200px,0 , 0);
+            }
+
+
+
+
+        </style>
+</head>
+<body>
+<nav>
+    <a href="#" class="nav-toggle-btn"></a>
+    <ul>
+        <li><a href="{{ url_for('dropsession1') }}">  Registration</a></li>
+        <li><a href="{{ url_for('dropsession2') }}">  Personal Details</a></li>
+        <li><a href="{{ url_for('dropsession4') }}"> Attendance</a></li>
+        <li><a href="{{ url_for('dropsession5') }}"> Get organization Data</a></li>
+        <li><a href="{{ url_for('dropsession6') }}"> Get Personal  Data</a></li>
+        <li><a href="{{ url_for('dropsession7') }}"> Get Attendance  Data</a></li>
+        <li><a href="{{ url_for('dropsession') }}">  Logout</a>
+    </ul>
+</nav>
+<div class="content">
+    <h1>This is content</h1>
+</div>
+
+<script type="text/javascript">
+    (function(){
+    var body = $('body'),
+    navToggleBtn = bodyEL.find('.nav-toggle-btn');
+    navToggleBtn.on('click', function(e) {
+    bodyEl.tooggleClass('active-nav');
+    e.preventDefault();
+    });
+    }();
+
+</script>
+
+</body>
+</html>

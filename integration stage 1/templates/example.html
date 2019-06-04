@@ -1,0 +1,84 @@
+<head>
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+</head>
+<body style="background-color:powderblue;">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+        body {margin:0;}
+        
+        .navbar {
+          overflow: hidden;
+          background-color: #333;
+          position: fixed;
+          top: 0;
+          width: 95%;
+        }
+        
+        .navbar a {
+          float: left;
+          display: block;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+        
+        .navbar a:hover {
+          background: #ddd;
+          color: black;
+        }
+        
+        .main {
+          padding: 16px;
+          margin-top: 25px;
+          height: 1500px; /* Used in this example to enable scrolling */
+        }
+        table, td, th {
+  border: 1px solid black;
+}
+        </style>
+        </head>
+        <body>
+<div class="navbar">
+        <ul class="menu">
+                        <a href="{{ url_for('dropsession3') }}">Home page</a>
+                        <a href="{{ url_for('dropsession1') }}">  Registration</a>
+                        <a href="{{ url_for('dropsession2') }}">  Personal Details</a>
+                        <a href="{{ url_for('dropsession2') }}">  Personal Details</a>
+                        <a href="{{ url_for('dropsession') }}">  Logout</a>
+                    </ul>
+</div>
+<table>
+    <br><br><h1> Organization Details</h1>
+    <thead>
+    <tr>
+        <th>Employee ID</th>
+        <th>Employee First Name</th>
+        <th>Employee Last Name</th>
+        <th>Employee Per_Email</th>
+        <th>Employee Org_Email</th>
+        <th>Employee Date of Join</th>
+        <th>Employee Designation</th>
+        <th>Employee Phone number</th>
+        <th>Department_ID</th>
+        <th>Reporting manager</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for row in value %} 
+            <tr>
+                <td>{{row[0]}}</td>
+                <td>{{row[1]}}</td>
+                <td>{{row[2]}}</td>
+                <td>{{row[3]}}</td>
+                <td>{{row[4]}}</td>
+                <td>{{row[5]}}</td>
+                <td>{{row[6]}}</td>
+                <td>{{row[7]}}</td>
+                <td>{{row[8]}}</td>
+                <td>{{row[9]}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
