@@ -1,60 +1,92 @@
-<!DOCTYPE html>
+    
 <html>
-  <head>
-      <link rel="stylesheet" href="/static/style.css" type="text/css">
-  </head>
-<body style="background-color:powderblue;">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-    body {margin:0;}
-    
-    .navbar {
-      overflow: hidden;
-      background-color: #333;
-      position: fixed;
-      top: 0;
-      width: 95%;
-    }
-    
-    .navbar a {
-      float: left;
-      display: block;
-      color: #f2f2f2;
-      text-align: center;
-      padding: 14px 16px;
-      text-decoration: none;
-      font-size: 17px;
-    }
-    
-    .navbar a:hover {
-      background: #ddd;
-      color: black;
-    }
-    
-    .main {
-      padding: 16px;
-      margin-top: 25px;
-      height: 1500px; /* Used in this example to enable scrolling */
-    }
-    </style>
-    </head>
-    <body>
-    
-    <div class="navbar">
-        <ul class="menu">
-            <br><a href="{{ url_for('dropsession3') }}">Home page</a>
+    <!-- <head>
+        <link rel="stylesheet" href="/static/style.css" type="text/css">
+    </head>  -->
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+       .tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+/* Style the tab content */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 50px;
+  text-align: center;
+}
+        body {font-family: "Lato", sans-serif;}
+      
+      .sidebar {
+        height: 100%;
+        width: 160px;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        padding-top: 16px;
+      }
+      
+      .sidebar a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 20px;
+        color: lightgray;
+        display: block;
+        border-bottom: 1px solid tan;
+      }
+      
+      .sidebar a:hover {
+        color: #f1f1f1;
+      }
+      
+      .main {
+        margin-left: 160px; /* Same as the width of the sidenav */
+        padding: 0px 10px;
+      }
+      
+      @media screen and (max-height: 450px) {
+        .sidebar {padding-top: 15px;}
+        .sidebar a {font-size: 18px;}
+      }
+        </style>
+        </head>
+<body style="background-color: #3498DB">
+
+    <div>
+        <img src="https://media.licdn.com/dms/image/C511BAQEO65PDkla4iA/company-background_10000/0?e=2159024400&v=beta&t=5cUkEKTgGK497OLTPF4bBie1E5wCKQeHN8vIf62wcl0" alt="Lights" style="width:1910; height: 150;";>
+      </div>
+      <div class="sidebar">
+        <a href="{{ url_for('dropsession3') }}">Home page</a>
 			<a href="{{ url_for('dropsession6') }}">Get Personal Details</a>
 			<a href="{{ url_for('dropsession7') }}">Get Org Details</a>
 			<a href="{{ url_for('dropsession8') }}">Get Attendance Details</a>
             <a href="{{ url_for('dropsession') }}">Logout</a>
-        </ul>
-    </div>
-	
-	<center>
-  <br><br>
-<h2 style="color:#e67050;">DashBoard</h2>
+    
+      </div>
 
-<form action="/readonly" method = "get">
-</center>
+    <center>
+                  
+    <title>Dashboard</title>
+
+<ul style="list-style-type:none;">
+  <li>Employee Name: Mani</li>
+  <li>Employee ID</li>
+  
+</ul>
+<div w3-include-html="line_chart.html"></div>
 </body>
+
+</center>
 </html>
